@@ -76,7 +76,7 @@ void Liberadora(node *vertices, bool *visitados,int n){
     //primeiramente, liberar as listas de adjacências e por consequência, também o array de vértices
     for(int i = 0; i<n ;i++){
         aux = &vertices[i];  
-        if(aux -> prox != NULL){ //se o vértice não tem lista de adjacências, deixamos sua liberação para depois(ao liberar o array de vértices no caso)
+        if(aux -> prox == NULL){ //se o vértice não tem lista de adjacências, deixamos sua liberação para depois(ao liberar o array de vértices no caso)
             break;
         }
         //caso possua lista de adjacências
@@ -154,7 +154,7 @@ int main(){
         }
     }
 
-    /* esse trecho testaca o grafo
+    /* esse trecho testava o grafo
     for(int i = 0;i<n;i++){
         node *auxiliar = &vertices[i];
         printf("teste de compare: vertice[%d] = %d\t",i+1,vertices[i].valor);
